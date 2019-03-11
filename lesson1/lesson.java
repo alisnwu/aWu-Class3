@@ -24,10 +24,10 @@ public class lesson {
       System.out.println("print");
     }
     // while loop (this will run infintely because there's no increment)
-    //int j=0;
-    //while (j<10){
-      //System.out.println("print");
-    //}
+    int j=0;
+    while (j<10){
+      System.out.println("print");
+    }
     //classwork
     for (int k=10; k<=20; k+=2){
       System.out.println(k);
