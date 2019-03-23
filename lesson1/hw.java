@@ -1,4 +1,3 @@
-
 public class hw {
   public static void main (String[] args){
     //1
@@ -9,7 +8,7 @@ public class hw {
     System.out.println(sum);
     //2
     for (int y=0; y<=100;){
-      if ((y-1)%5==0){
+      if ((y+1)%5==0){
         System.out.println(y);
       }
       y += 2;
@@ -31,9 +30,12 @@ public class hw {
     else {
       System.out.println("A");
     }
-    //Prints out all numbers that are either multiples of 3 or multiples of 4, but not both.
+    //4
     for (int z=1; z<=100;){
-      if (z%3==0 || z%4==0 && z%12==0){
+      if ((z%3==0)^(z%12==0)){
+        System.out.println(z);
+      }
+      else if ((z%4==0)^(z%12==0)){
         System.out.println(z);
       }
       z++;
