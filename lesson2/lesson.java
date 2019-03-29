@@ -1,10 +1,10 @@
 public class lesson {
   public static void main (String[] args){
     //public = scope, void = no return value, main = name of function, (String[] args) = args is just a name of the string aray
-    //printSum(10,15);
-    //System.out.println(printSum2(10, 15)); //it wouldn't print if you don't add the Sysout
-    //System.out.println(args[0]); //if you run this program in the terminal as "java lesson smth" then it will print smth
-    //System.out.println(args[1]); //if you run this in the terminal as "java lesson smth1 smth2" then it will print both smths
+    printSum(10,15);
+    System.out.println(printSum2(10, 15)); //it wouldn't print if you don't add the Sysout
+    System.out.println(args[0]); //if you run this program in the terminal as "java lesson smth" then it will print smth
+    System.out.println(args[1]); //if you run this in the terminal as "java lesson smth1 smth2" then it will print both smths
     //Arrays
     int[] arr = new int [] {1,2,3,4,5,6,7,8}; //(integer array) + (name) = (initializes) + (array) ({assign array})
     for (int i = 0; i < arr.length; i++){
@@ -18,12 +18,6 @@ public class lesson {
       {5,6,7,8},
       {9,10,11,12}
     };
-    for (int y = 0; y < grid.length; y++){
-      System.out.println(arr[y]);
-    }
-    for (int x = 0; x < grid[0].length; x++){
-      System.out.println(arr[x]);
-    }
   }
   public static void printSum (int a, int b){
     int total = 0;
