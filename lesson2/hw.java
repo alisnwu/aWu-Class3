@@ -34,8 +34,9 @@ public class hw {
   }
   public static void doubleArray(int[][] grid){
     for (int row = 0; row < grid.length; row++){
-      for (int col = 0; col < grid[row].length; col++)
+      for (int col = 0; col < grid[row].length; col++){
         System.out.print(grid[row][col] + " ");
+      }
       System.out.println();
     }
   }
@@ -46,21 +47,22 @@ public class hw {
       binary[index++] = num % 2;
       num = num / 2;
     }
-    for (int g = index-1; g >= 0; g--)
+    for (int g = index-1; g >= 0; g--){
       System.out.print(binary[g]);
+    }
     System.out.println();
   }
-  public static void median(int[] m) {
-    for (int x = 0; x < m.length; x++) {
-      for (int y = 0; y < m.length; y++) {
-        if (m[x] < m[y]) {
-            int temp = m[x];
-            m[x] = m[y];
-            m[y] = temp;
+  public static void median(int[] m){
+    for (int x = 0; x < m.length; x++){
+      for (int y = 0; y < m.length; y++){
+        if (m[x] < m[y]){
+          int temp = m[x];
+          m[x] = m[y];
+          m[y] = temp;
         }
       }
     }
-    System.out.println(m[m.length/2]);
+    System.out.println(m[2]);
   }
   public static void shuffle(boolean[] lockersOpen, int start){
     int nextLocker = start;
@@ -70,12 +72,13 @@ public class hw {
   }
   public static void display(boolean[] lockers){
     int lockerCount = 0;
-    for (int b = 0; b < lockers.length; b++) {
-      if (lockers[b]) {
+    for (int b = 0; b < lockers.length; b++){
+      if (lockers[b]){
         System.out.print((b + 1) + " ");
         lockerCount++;
-        if (lockerCount % 10 == 0)
-            System.out.println("");
+        if (lockerCount % 10 == 0){
+          System.out.println("");
+        }
       }
     }
   }
