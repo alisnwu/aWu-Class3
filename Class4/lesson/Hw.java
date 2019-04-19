@@ -34,7 +34,11 @@ class Account{
   }
   public void debit(double amount){
     if (balance >= amount){
+<<<<<<< HEAD
       this.balance = balance - amount;
+=======
+      this.balance = balance - amount
+>>>>>>> 8e712fa9865c53933a50209fa21b97f8d7a4e3eb
     }
     else{
       System.out.println("Amount withdrawn exceeds the current balance");
