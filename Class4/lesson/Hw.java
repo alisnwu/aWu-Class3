@@ -21,20 +21,20 @@ class Account{
     this.accountNumber = accountNumber;
   }
   public int getAccount(){
-    return accountNumber;
+    return this.accountNumber;
   }
   public double getBalance(){
-    return balance;
+    return this.balance;
   }
   public void setBalance(double balance){
     this.balance = balance;
   }
   public void credit(double amount){
-    System.out.println("credit: " + (balance + amount));
+    this.balance = balance + amount;
   }
   public void debit(double amount){
     if (balance >= amount){
-      System.out.println("debit: " + (balance - amount));
+      this.balance = balance - amount;
     }
     else{
       System.out.println("Amount withdrawn exceeds the current balance");
