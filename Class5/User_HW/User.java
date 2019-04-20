@@ -25,12 +25,13 @@ public class User{
     return false;
   }
 }
+
 class Customer extends User{
   String name;
   String address;
   String email;
   String customerId;
-  private double accountBalance = 0;
+  private static double accountBalance = 0;
   public void register(){
     Scanner register = new Scanner(System.in);
     System.out.println("Name: ");
@@ -39,7 +40,7 @@ class Customer extends User{
 		address = register.nextLine();
 		System.out.println("Email: ");
 		email = register.nextLine();
-    System.out.println("Username: ");
+    System.out.println("Set username: ");
     super.setUser(register.nextLine());
 		System.out.println("Set password: ");
 		super.setPassword(register.nextLine());
@@ -47,23 +48,28 @@ class Customer extends User{
   public void setBalance(int x){
     accountBalance = x;
   }
-  public void purchase(){
-    Scanner purchase = new Scanner(System.in);
-    System.out.println("Item price:");
-    double price = purchase.nextDouble();
-    if(accountBalance > price){
-      accountBalance -= price;
+  public static void purchase(){
+    Order.placeOrder();
+    Scanner ask = new Scanner(System.in);
+    System.out.println("Confirm purchase? [y/n]");
+    String confirm = ask.nextLine();
+    if(confirm.equals("y") && accountBalance > OrderDetails.total){
+      accountBalance -= OrderDetails.total;
       System.out.println("Purchase successful. New balance:" + accountBalance);
+    }
+    else if(confirm.equals("n")){
+      System.out.println("Order successfully cancelled.");
     }
     else{
       System.out.println("Insufficient balance: " + accountBalance);
     }
   }
 }
+
 class Administrator extends User{
   String name;
   String email;
-  public void Admin(String name, String email){
+  public void setAdmin(String name, String email){
     this.name = name;
     this.email = email;
   }

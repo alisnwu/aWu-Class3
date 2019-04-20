@@ -1,20 +1,31 @@
-public class Order implements Customer{
-  private String orderId;
-  private Date date;
-  private String customerName;
-  private String customerId;
-  public placeOrder(){
-    
+public class Order{
+  static String orderId;
+  static String date;
+  static String costumerId;
+  static String costumerName;
+  public void setOrder(String id, String d){
+    orderId = id;
+    date = d;
+  }
+  public static void placeOrder(){
+    OrderDetails.calculateTotal();
+    System.out.println(orderId + " " + date + " " + OrderDetails.quantity + " " + OrderDetails.productName + " Total: " + OrderDetails.total);
   }
 }
-public class OrderDetails implements Order{
-  private String orderId;
-  private String productId;
-  private String productName;
-  private int quantity;
-  private double unitCost;
-  private double total;
-  public calculateTotal(){
 
+class OrderDetails{
+  static String orderId;
+  static String productId;
+  static String productName;
+  public static int quantity;
+  public static double unitCost;
+  public static double total;
+  public void setProduct(String name, int quantity, int cost){
+    productName = name;
+    this.quantity = quantity;
+    unitCost = cost;
+  }
+  public static void calculateTotal(){
+    total = quantity * unitCost;
   }
 }
